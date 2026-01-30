@@ -1,3 +1,4 @@
+#1
 x = "awesome"
 
 def myfunc():
@@ -6,7 +7,7 @@ def myfunc():
 myfunc()
 
 
-
+#2
 x = "awesome"
 
 def myfunc():
@@ -17,6 +18,19 @@ myfunc()
 
 print("Python is " + x)
 
+
+#3
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+
+print("Python is " + x)
+
+
+#4
+x = "awesome"
 
 def myfunc():
   global x
@@ -27,14 +41,12 @@ myfunc()
 print("Python is " + x)
 
 
+#5
+total = 100
 
+def subtract(amount):
+    global total
+    total -= amount
 
-x = "awesome"
-
-def myfunc():
-  global x
-  x = "fantastic"
-
-myfunc()
-
-print("Python is " + x)
+subtract(30)
+print(total)  # 70
