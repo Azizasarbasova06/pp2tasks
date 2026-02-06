@@ -31,9 +31,9 @@ thislist = ["apple", "banana", "cherry"]
 for x in thislist:
   print(x)
 
-#7 (Only accept items that are not "apple")
+#7 (Accept only numbers lower than 5)
 
-newlist = [x for x in fruits if x != "apple"]
+newlist = [x for x in range(10) if x < 5]
 
 #8 (Sort the list numerically)
 
