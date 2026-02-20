@@ -1,8 +1,10 @@
-class Circle:
-    pi = 3.14 # Переменная класса (общая для всех)
-
-    def __init__(self, radius):
-        self.radius = radius # Переменная экземпляра (у каждого своя)
-
-c1 = Circle(5)
-print(f"Area: {Circle.pi * (c1.radius ** 2)}")
+# 1. Общий налог
+class Store: tax = 0.12
+# 2. Счетчик объектов
+class Count:
+    n = 0
+    def __init__(self): Count.n += 1
+# 3. Общий ВУЗ
+class KBTU: uni = "KBTU"
+# 4. Константа
+class Const: pi = 3.14

@@ -1,10 +1,18 @@
-# Базовая функция без аргументов
-def say_hello():
-    print("Hello from KBTU!")
+# 1. Простая функция
+def greet():
+    print("Hello, KBTU!")
 
-# Функция с простым аргументом
-def greet_user(name):
-    print(f"Hello, {name}!")
+# 2. Функция с одним параметром
+def welcome_user(name):
+    print(f"Welcome, {name}")
 
-say_hello()
-greet_user("Aziza")
+# 3. Функция с двумя параметрами
+def show_info(city, age):
+    print(f"City: {city}, Age: {age}")
+
+# 4. Функция с вызовом другой функции
+def main():
+    greet()
+    print("Main finished")
+
+main()
