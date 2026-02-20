@@ -1,23 +1,25 @@
 import json
 
-# 1. Конвертация Python словаря в JSON строку (dumps)
-person = {"name": "Aziza", "university": "KBTU", "skills": ["Python", "Git"]}
-json_string = json.dumps(person, indent=4)
-print("JSON String:", json_string)
+# 1. Открываем и загружаем JSON файл
+with open('sample-data.json', 'r') as file:
+    data = json.load(file)
 
-# 2. Парсинг JSON строки в словарь (loads)
-json_input = '{"course": "PP2", "semester": 2}'
-data = json.loads(json_input)
-print("Course name:", data["course"])
+# 2. Печатаем заголовок таблицы (точно как в задании)
+print("Interface Status")
+print("=" * 80)
+print(f"{'DN':<50} {'Description':<20} {'Speed':<8} {'MTU':<6}")
+print(f"{'-' * 50} {'-' * 20} {'-' * 6} {'-' * 6}")
 
-# 3. Запись данных в файл (dump)
-with open('data.json', 'w') as f:
-    json.dump(person, f)
-
-# 4. Чтение из файла (например, sample-data.json)
-# Раскомментируй это, когда файл будет в папке:
-"""
-with open('sample-data.json', 'r') as f:
-    sample_data = json.load(f)
-    print("Data from file:", sample_data)
-"""
+# 3. Проходим циклом по списку интерфейсов в imdata
+for item in data["imdata"]:
+    # Извлекаем атрибуты из вложенного словаря
+    attr = item["l1PhysIf"]["attributes"]
+    
+    dn = attr["dn"]
+    description = attr["descr"]
+    speed = attr["speed"]
+    mtu = attr["mtu"]
+    
+    # Печатаем строку таблицы с выравниванием
+    # <50 значит "занять 50 символов и выровнять по левому краю"
+    print(f"{dn:<50} {description:<20} {speed:<8} {mtu:<6}")

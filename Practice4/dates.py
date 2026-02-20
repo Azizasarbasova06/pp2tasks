@@ -1,19 +1,41 @@
 import datetime
 
-# 1. Текущая дата и специфическое форматирование
-now = datetime.datetime.now()
-print("Current format:", now.strftime("%Y-%m-%d %H:%M:%S"))
+# --- Task 1: Subtract five days from current date ---
+current_date = datetime.datetime.now()
+five_days_ago = current_date - datetime.timedelta(days=5)
+print("Current Date:", current_date.strftime("%Y-%m-%d"))
+print("Five days ago:", five_days_ago.strftime("%Y-%m-%d"))
 
-# 2. Создание конкретного объекта даты
-my_birthday = datetime.datetime(2006, 5, 15)
-print("Birthday:", my_birthday.strftime("%A, %B %d, %Y"))
+print("-" * 30)
 
-# 3. Вычисление разницы во времени (Timedelta)
+# --- Task 2: Print yesterday, today, tomorrow ---
 today = datetime.datetime.now()
-five_days_ago = today - datetime.timedelta(days=5)
-print("5 days ago was:", five_days_ago)
+yesterday = today - datetime.timedelta(days=1)
+tomorrow = today + datetime.timedelta(days=1)
 
-# 4. Парсинг строки в дату (strptime)
-date_str = "20 February, 2026"
-date_obj = datetime.datetime.strptime(date_str, "%d %B, %Y")
-print("Parsed date:", date_obj)
+print("Yesterday:", yesterday.strftime("%Y-%m-%d"))
+print("Today:    ", today.strftime("%Y-%m-%d"))
+print("Tomorrow: ", tomorrow.strftime("%Y-%m-%d"))
+
+print("-" * 30)
+
+# --- Task 3: Drop microseconds from datetime ---
+# Мы используем метод .replace(), чтобы обнулить микросекунды
+dt_with_microseconds = datetime.datetime.now()
+dt_without_microseconds = dt_with_microseconds.replace(microsecond=0)
+
+print("With microseconds:   ", dt_with_microseconds)
+print("Without microseconds:", dt_without_microseconds)
+
+print("-" * 30)
+
+# --- Task 4: Calculate two date difference in seconds ---
+date1 = datetime.datetime(2026, 2, 20, 12, 0, 0) # Сегодня полдень
+date2 = datetime.datetime(2026, 2, 21, 12, 0, 0) # Завтра полдень
+
+# Разница дает объект timedelta
+difference = date2 - date1
+seconds_diff = difference.total_seconds()
+
+print(f"Difference between {date1} and {date2}:")
+print(f"{seconds_diff} seconds")
