@@ -1,16 +1,39 @@
-# 1. Смартфон
-class Camera: pass
-class Phone: pass
-class Smart(Camera, Phone): pass
-# 2. Робот-пылесос
-class Cleaner: pass
-class Ai: pass
-class Robo(Cleaner, Ai): pass
-# 3. Часы-трекер
-class Clock: pass
-class Tracker: pass
-class Watch(Clock, Tracker): pass
-# 4. Мульти-инструмент
-class Pen: pass
-class Laser: pass
-class MultiTool(Pen, Laser): pass
+# 1. Смартфон (Телефон + Камера)
+class PhonePart:
+    def call(self): print("Calling...")
+
+class CameraPart:
+    def photo(self): print("Click!")
+
+class Smartphone(PhonePart, CameraPart):
+    pass
+
+# 2. Студент-разработчик
+class Learner:
+    def study(self): print("Studying PP2")
+
+class Coder:
+    def write_code(self): print("Writing Python")
+
+class TechStudent(Learner, Coder):
+    pass
+
+# 3. Робот-пылесос (Пылесос + ИИ)
+class Vacuum:
+    def clean(self): print("Cleaning floors")
+
+class AI:
+    def think(self): print("Calculating path")
+
+class RoboCleaner(Vacuum, AI):
+    pass
+
+# 4. Многофункциональное устройство (Принтер + Сканер)
+class Printer:
+    def print_doc(self): print("Printing")
+
+class Scanner:
+    def scan_doc(self): print("Scanning")
+
+class MFU(Printer, Scanner):
+    pass

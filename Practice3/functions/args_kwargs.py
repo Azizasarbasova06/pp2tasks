@@ -1,19 +1,22 @@
-# 1. Использование *args
-def sum_all(*args):
-    return sum(args)
+# 1. *args для суммирования всех трат
+def total_expenses(*amounts):
+    total = sum(amounts)
+    print(f"Общая сумма расходов: {total} KZT")
+    return total
 
-# 2. Использование **kwargs
-def user_data(**kwargs):
-    for key, value in kwargs.items():
-        print(f"{key}: {value}")
+# 2. **kwargs для детальной информации о товаре
+def product_details(name, **features):
+    print(f"Детали товара '{name}':")
+    for key, value in features.items():
+        print(f"- {key}: {value}")
 
-# 3. Комбинация args и обычных
-def order_pizza(size, *toppings):
-    print(f"Size: {size}, Toppings: {toppings}")
+# 3. Обязательные аргументы + *args
+def print_student_list(group_id, *students):
+    print(f"Группа {group_id}: {', '.join(students)}")
 
 # 4. Полная комбинация
-def complex_func(a, *args, **kwargs):
-    print(a, args, kwargs)
+def system_log(level, *messages, **meta):
+    print(f"[{level.upper()}] {' | '.join(messages)}")
+    print(f"Metadata: {meta}")
 
-print(sum_all(1, 2, 3))
-user_data(name="Aziza", job="Student")
+product_details("Медовик", weight="1.5kg", organic=True, rating=5.0)

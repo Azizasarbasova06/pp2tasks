@@ -1,20 +1,20 @@
-# 1. Возврат числа
-def add(a, b):
-    return a + b
+# 1. Расчет итогового балла
+def get_final_score(quiz, midterm, final):
+    return quiz + midterm + final
 
-# 2. Возврат строки
-def get_status(score):
-    return "Pass" if score > 50 else "Fail"
+# 2. Проверка возможности заказа
+def can_order(balance, total_cost):
+    if balance >= total_cost:
+        return True, balance - total_cost
+    return False, balance
 
-# 3. Возврат списка
-def get_range(n):
-    return list(range(n))
+# 3. Генерация меню (возврат списка)
+def generate_menu(base_dish):
+    return [base_dish, f"{base_dish} с соусом", f"{base_dish} XL"]
 
-# 4. Возврат нескольких значений (кортеж)
-def get_min_max(nums):
-    return min(nums), max(nums)
+# 4. Кортеж с минимальной и максимальной ценой
+def get_price_range(prices):
+    return min(prices), max(prices)
 
-print(add(5, 5))
-print(get_status(75))
-print(get_range(5))
-print(get_min_max([1, 2, 3]))
+res, change = can_order(5000, 3200)
+print(f"Заказ оформлен: {res}, Сдача: {change}")

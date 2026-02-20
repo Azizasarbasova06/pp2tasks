@@ -1,13 +1,17 @@
-nums = [1, 2, 3, 4]
-# 1. Умножение на 10
-res1 = list(map(lambda x: x * 10, nums))
-# 2. Превращение в строки
-res2 = list(map(lambda x: f"Num {x}", nums))
-# 3. Округление списка цен
-prices = [10.5, 20.9, 30.1]
-res3 = list(map(lambda p: round(p), prices))
-# 4. Длина слов в списке
-words = ["it", "python", "kbtu"]
-res4 = list(map(lambda w: len(w), words))
+# 1. Конвертация цен из KZT в USD (курс 450)
+kzt = [1000, 4500, 9000]
+usd = list(map(lambda x: x / 450, kzt))
 
-print(res1, res2, res3, res4)
+# 2. Форматирование имен для БД
+raw_names = ["ali", "BAUR", "aziza"]
+fixed_names = list(map(lambda n: n.capitalize(), raw_names))
+
+# 3. Вычисление площади квадратов из списка сторон
+sides = [2, 5, 10]
+areas = list(map(lambda s: s**2, sides))
+
+# 4. Извлечение первого слова из описания
+descr = ["IS major", "CS minor", "EC student"]
+majors = list(map(lambda d: d.split()[0], descr))
+
+print(fixed_names)

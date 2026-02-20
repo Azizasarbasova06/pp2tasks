@@ -1,18 +1,21 @@
-# 1. Простая функция
-def greet():
-    print("Hello, KBTU!")
+# 1. Функция приветствия с системным временем
+def system_greeting():
+    print("Инициализация системы управления KBTU...")
+    print("Доступ разрешен. Добро пожаловать!")
 
-# 2. Функция с одним параметром
-def welcome_user(name):
-    print(f"Welcome, {name}")
+# 2. Функция для вывода информации о проекте SIS
+def show_project_info(project_name):
+    status = "в разработке"
+    print(f"Проект '{project_name}' сейчас находится в статусе: {status}.")
 
-# 3. Функция с двумя параметрами
-def show_info(city, age):
-    print(f"City: {city}, Age: {age}")
+# 3. Функция отображения локации пользователя
+def user_location(city, country="Kazakhstan"):
+    print(f"Ваш регион входа: {city}, {country}.")
 
-# 4. Функция с вызовом другой функции
-def main():
-    greet()
-    print("Main finished")
+# 4. Вызов функций внутри другой функции
+def start_session():
+    system_greeting()
+    show_project_info("Online Food Marketplace")
+    user_location("Atyrau")
 
-main()
+start_session()
