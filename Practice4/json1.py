@@ -3,7 +3,7 @@ import json
 
 # 'with open' is a safe way to open a file. 
 # It ensures the file closes itself, even if an error occurs in the program.
-with open('sample-data.json', 'r') as f:
+with open("json1.py", 'r') as f:
     # json.load(f) converts a JSON text file into a standard Python dictionary.
     data = json.load(f)
 
