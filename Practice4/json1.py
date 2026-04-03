@@ -1,5 +1,4 @@
 import json 
-# Import the module for working with JSON format 
 
 # 'with open' is a safe way to open a file. 
 # It ensures the file closes itself, even if an error occurs in the program.
