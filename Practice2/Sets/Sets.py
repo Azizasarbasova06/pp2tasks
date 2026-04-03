@@ -1,4 +1,4 @@
-#1 (Check if "banana" is present in the set)
+#1 (Check if banana is present in the set)
 
 thisset = {"apple", "banana", "cherry"}
 
