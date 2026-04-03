@@ -1,7 +1,7 @@
 import re
 import json
 
-# УПРАЖНЕНИЯ ПО REGEX (Задания 1-10)
+# УПРАЖНЕНИЯ ПО REGEX
 
 # 1. 'a', за которой следует ноль или более 'b'. * — квантификатор "0 или больше"
 def task1(text): return re.fullmatch(r"ab*", text)
