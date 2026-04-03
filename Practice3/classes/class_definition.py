@@ -1,4 +1,4 @@
-# 1. Класс Университет
+# 1 Класс Университет
 class University:
     name = "KBTU"
     city = "Almaty"
