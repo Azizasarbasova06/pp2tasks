@@ -1,5 +1,5 @@
 import psycopg2
-from config import DB_CONFIG
+from Practice8.config import DB_CONFIG
 
 def create_table():
     # SQL запрос на создание таблицы

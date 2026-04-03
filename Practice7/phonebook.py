@@ -1,6 +1,6 @@
 import psycopg2
 import csv
-from config import DB_CONFIG
+from Practice8.config import DB_CONFIG
 
 # --- Функции для работы с БД ---
 

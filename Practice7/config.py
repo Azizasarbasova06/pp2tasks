@@ -3,6 +3,6 @@ DB_CONFIG = {
     "host": "localhost",
     "database": "phonebook_db",
     "user": "postgres",
-    "password": "Your Password", 
+    "password": "1234567", 
     "port": "5433"
 }
