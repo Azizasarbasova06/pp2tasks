@@ -39,7 +39,7 @@ def task10(text):
     return re.sub('([a-z0-9])([A-Z])', r'\1_\2', res).lower()
 
 
-# ПАРСИНГ ЧЕКА 
+# ПАРСИНГ ЧЕКa
 
 def parse_europharma_receipt(file_name):
     try:
