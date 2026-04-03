@@ -1,5 +1,3 @@
-# enumerate() и zip()
-
 names = ["Ali", "Aruzhan", "Dana"]
 scores = [90, 85, 88]
 
