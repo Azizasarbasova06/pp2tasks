@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((500, 350))
 pygame.display.set_caption("My Music Player")
 # Подгружаем шрифт для вывода информации
 font = pygame.font.SysFont("Arial", 20)
-# clock нужен для контроля скорости программы (FPS)
+# clock нужен для контроля скорости программы
 clock = pygame.time.Clock()
 
 # Инициализируем плеер.
