@@ -12,7 +12,7 @@ pygame.display.set_caption("Moving Ball Game")
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
-# Параметры шарика (Radius 25, 50x50 pixels)
+# Параметры шарика (Radius 25, 50x50 pixel)
 ball_radius = 25
 # Начальная позиция — центр экрана
 ball_x = WIDTH // 2
