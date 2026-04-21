@@ -1,82 +1,85 @@
 import pygame
 from player import MusicPlayer
 
-# Запуск Pygame и звукового движка
 pygame.init()
 pygame.mixer.init()
 
-# Создаем окно 500x350 пикселей
-screen = pygame.display.set_mode((500, 350))
-pygame.display.set_caption("My Music Player")
-# Подгружаем шрифт для вывода информации
-font = pygame.font.SysFont("Arial", 20)
-# clock нужен для контроля скорости программы
-clock = pygame.time.Clock()
+# Настройки окна
+WIDTH, HEIGHT = 500, 350
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("KBTU Music Player")
 
-# Инициализируем плеер.
-player = MusicPlayer("music/sample_tracks/")
+# Шрифты
+font_main = pygame.font.SysFont("Arial", 24, bold=True)
+font_sub = pygame.font.SysFont("Arial", 18)
+font_hint = pygame.font.SysFont("Arial", 14)
+
+# Инициализация плеера (укажи свою папку!)
+player = MusicPlayer("music/sample_tracks") 
 
 running = True
-is_paused = False # Отслеживаем состояние паузы вручную
+is_paused = False
 
 while running:
-    # Заливка фона темно-серый
-    screen.fill((30, 30, 30))
+    screen.fill((25, 25, 25)) # Темный фон как в Spotify
     
-    # Получаем данные от объекта плеера
-    current_track = player.get_current_track()
-    pos = player.get_pos()
+    # 1. Получаем данные
+    artist, title = player.get_info()
+    current_time = player.get_pos()
+    total_time = player.duration
     
-    # Готовим текст для отрисовки (render)
-    track_text = font.render(f"Track: {current_track}", True, (255, 255, 255))
-    time_text = font.render(f"Time: {pos} sec", True, (0, 255, 0))
-    hint_text = font.render("P: Play/Pause | S: Stop | N: Next | B: Back | Q: Quit", True, (200, 200, 200))
-    
-    # Рисуем текст в определенных координатах 
-    screen.blit(track_text, (20, 50))
-    screen.blit(time_text, (20, 100))
-    screen.blit(hint_text, (20, 250))
+    # 2. Отрисовка текста (Track Info)
+    artist_surf = font_sub.render(artist, True, (180, 180, 180))
+    title_surf = font_main.render(title, True, (255, 255, 255))
+    screen.blit(artist_surf, (20, 40))
+    screen.blit(title_surf, (20, 70))
 
-    # Слушаем действия пользователя
+    # 3. Визуализация прогресса (Playback Progress)
+    # Рисуем серую подложку (фон полоски)
+    bar_x, bar_y, bar_width, bar_height = 20, 150, 460, 6
+    pygame.draw.rect(screen, (60, 60, 60), (bar_x, bar_y, bar_width, bar_height), border_radius=3)
+    
+    # Считаем ширину зеленой полоски
+    if total_time > 0:
+        progress = (current_time / total_time) * bar_width
+        pygame.draw.rect(screen, (30, 215, 96), (bar_x, bar_y, progress, bar_height), border_radius=3)
+
+    # Время цифрами
+    time_str = f"{int(current_time // 60):02}:{int(current_time % 60):02} / {int(total_time // 60):02}:{int(total_time % 60):02}"
+    time_surf = font_hint.render(time_str, True, (150, 150, 150))
+    screen.blit(time_surf, (20, 165))
+
+    # Подсказки по кнопкам
+    hint = font_hint.render("P: Play/Pause | S: Stop | N: Next | B: Back", True, (100, 100, 100))
+    screen.blit(hint, (20, 300))
+
+    # 4. Обработка событий
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         
-        # Обработка нажатий на клавиатуре
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_p:
-                # Если музыка еще не загружена — включаем её
                 if not player.is_loaded:
                     player.play()
                     is_paused = False
-                # Если стоит на паузе — продолжаем играть
                 elif is_paused:
                     player.unpause()
                     is_paused = False
-                # Если играет — ставим на паузу
                 else:
                     player.pause()
                     is_paused = True
-            
             elif event.key == pygame.K_s:
                 player.stop()
                 is_paused = False
-                
             elif event.key == pygame.K_n:
                 player.next()
                 is_paused = False
-                
             elif event.key == pygame.K_b:
                 player.prev()
                 is_paused = False
-                
-            elif event.key == pygame.K_q:
-                # Выход из программы
-                running = False
 
-    # Обновляем кадр
     pygame.display.flip()
-    # Ограничиваем до 30 кадров в секунду
-    clock.tick(30)
+    pygame.time.Clock().tick(30)
 
 pygame.quit()
