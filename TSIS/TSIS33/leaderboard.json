@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Player",
+        "score": 450,
+        "distance": 4476,
+        "coins": 50,
+        "mode": "Easy"
+    },
+    {
+        "name": "Aziza",
+        "score": 200,
+        "distance": 2252,
+        "coins": 17,
+        "mode": "Normal"
+    },
+    {
+        "name": "A",
+        "score": 200,
+        "distance": 3033,
+        "coins": 16,
+        "mode": "Normal"
+    },
+    {
+        "name": "A",
+        "score": 110,
+        "distance": 1327,
+        "coins": 11,
+        "mode": "Normal"
+    },
+    {
+        "name": "Player",
+        "score": 100,
+        "distance": 349,
+        "coins": 6,
+        "mode": "Normal"
+    },
+    {
+        "name": "Player",
+        "score": 90,
+        "distance": 1563,
+        "coins": 11,
+        "mode": "Easy"
+    },
+    {
+        "name": "Player",
+        "score": 10,
+        "distance": 1382,
+        "coins": 3,
+        "mode": "Normal"
+    },
+    {
+        "name": "A",
+        "score": 0,
+        "distance": 251,
+        "coins": 0,
+        "mode": "Normal"
+    },
+    {
+        "name": "A",
+        "score": 0,
+        "distance": 451,
+        "coins": 0,
+        "mode": "Normal"
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 2,
+        "name": "Aida",
+        "email": "Aida@gmail.com",
+        "birthday": "2005-01-10",
+        "date_added": "2026-05-05T20:07:24.073128",
+        "group_name": "Family",
+        "phones": [
+            {
+                "phone": "87011547879",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Aray",
+        "email": "aray@gmail.com",
+        "birthday": "2006-04-18",
+        "date_added": "2026-05-05T20:07:24.073128",
+        "group_name": "Work",
+        "phones": [
+            {
+                "phone": "87074555758",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Dias",
+        "email": "dias@gmail.con",
+        "birthday": "2004-03-21",
+        "date_added": "2026-05-05T20:07:24.073128",
+        "group_name": "Friend",
+        "phones": [
+            {
+                "phone": "87011231415",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Miras",
+        "email": "miras@gmail.com",
+        "birthday": "2004-12-04",
+        "date_added": "2026-05-05T20:07:24.073128",
+        "group_name": "Friend",
+        "phones": [
+            {
+                "phone": "87011658796",
+                "type": "work"
+            }
+        ]
+    }
+]
